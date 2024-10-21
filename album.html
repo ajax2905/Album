@@ -1,23 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBTB</title>
+    <title>Meu Álbum de Fotos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-      <header>
-        <nav>
-            <a class="logo" href="/">Mário Braga</a>
-            <ul class="nav-list">
-                <li><a href="/">Início</a></li>
-                <li><a href="/">Sobre</a></li>
-                <li><a href="/">Projetos</a></li>
-                <li><a href="/">Contatos</a></li>
-            </ul>
-        </nav>
-      </header>
-      <main></main>   
+    <header>
+        <div class="container">
+            <h1>Meu Álbum de Fotos</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="album" class="container">
+            <!-- Fotos serão adicionadas aqui -->
+        </div>
+        <div id="modal" class="hidden">
+            <img id="modal-img" src="" alt="Foto Ampliada">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modal-info">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
