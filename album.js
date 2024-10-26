@@ -1,5 +1,5 @@
 const images = [
-    'https://via.placeholder.com/200/FF5733/FFFFFF?text=Foto+1',
+    'imagens/20240926_115543.jpg',
     'https://via.placeholder.com/200/33FF57/FFFFFF?text=Foto+2',
     'https://via.placeholder.com/200/3357FF/FFFFFF?text=Foto+3',
     'https://via.placeholder.com/200/FFFF33/FFFFFF?text=Foto+4',
