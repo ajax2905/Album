@@ -2,7 +2,7 @@ const cells = document.querySelectorAll('.cell');
 const resetButton = document.getElementById('reset');
 const messageDisplay = document.getElementById('message');
 
-let currentPlayer = 'Jogador'; // Jogador humano
+let currentPlayer = 'X'; // Jogador humano
 let board = ['', '', '', '', '', '', '', '', ''];
 let gameActive = true;
 
@@ -31,7 +31,7 @@ function handleCellClick(event) {
     checkWinner();
 
     if (gameActive) {
-        currentPlayer = 'Computador'; // Passa a vez para a IA
+        currentPlayer = 'O'; // Passa a vez para a IA
         setTimeout(aiMove, 500); // IA faz o movimento após meio segundo
     }
 }
@@ -54,7 +54,7 @@ function aiMove() {
     checkWinner();
 
     if (gameActive) {
-        currentPlayer = 'Jogador'; // Volta a vez para o jogador
+        currentPlayer = 'X'; // Volta a vez para o jogador
     }
 }
 
