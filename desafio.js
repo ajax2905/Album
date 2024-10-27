@@ -2,7 +2,7 @@ const cells = document.querySelectorAll('.cell');
 const resetButton = document.getElementById('reset');
 const messageDisplay = document.getElementById('message');
 
-let currentPlayer = 'X';
+let currentPlayer = 'Jogador'; // Jogador humano
 let board = ['', '', '', '', '', '', '', '', ''];
 let gameActive = true;
 
@@ -29,6 +29,33 @@ function handleCellClick(event) {
     clickedCell.textContent = currentPlayer;
 
     checkWinner();
+
+    if (gameActive) {
+        currentPlayer = 'Computador'; // Passa a vez para a IA
+        setTimeout(aiMove, 500); // IA faz o movimento após meio segundo
+    }
+}
+
+function aiMove() {
+    const availableCells = board
+        .map((cell, index) => (cell === '' ? index : null))
+        .filter(index => index !== null);
+
+    if (availableCells.length === 0) {
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * availableCells.length);
+    const aiCellIndex = availableCells[randomIndex];
+
+    board[aiCellIndex] = currentPlayer;
+    cells[aiCellIndex].textContent = currentPlayer;
+
+    checkWinner();
+
+    if (gameActive) {
+        currentPlayer = 'X'; // Volta a vez para o jogador
+    }
 }
 
 function checkWinner() {
@@ -55,8 +82,6 @@ function checkWinner() {
         messageDisplay.textContent = 'Empate!';
         gameActive = false;
     }
-
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
 }
 
 function resetGame() {
