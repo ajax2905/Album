@@ -54,7 +54,7 @@ function aiMove() {
     checkWinner();
 
     if (gameActive) {
-        currentPlayer = 'X'; // Volta a vez para o jogador
+        currentPlayer = 'Jogador'; // Volta a vez para o jogador
     }
 }
 
@@ -87,7 +87,7 @@ function checkWinner() {
 function resetGame() {
     board = ['', '', '', '', '', '', '', '', ''];
     gameActive = true;
-    currentPlayer = 'X';
+    currentPlayer = 'Jogador';
     messageDisplay.textContent = '';
     cells.forEach(cell => {
         cell.textContent = '';
