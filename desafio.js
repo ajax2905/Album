@@ -87,7 +87,7 @@ function checkWinner() {
 function resetGame() {
     board = ['', '', '', '', '', '', '', '', ''];
     gameActive = true;
-    currentPlayer = 'Jogador';
+    currentPlayer = 'X';
     messageDisplay.textContent = '';
     cells.forEach(cell => {
         cell.textContent = '';
